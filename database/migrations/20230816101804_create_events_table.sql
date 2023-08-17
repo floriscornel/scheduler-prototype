@@ -1,7 +1,7 @@
 -- +goose Up
 -- +goose StatementBegin
 CREATE TABLE events (
-    id BIGINT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     user_id BIGINT NOT NULL,
     ical_uid VARCHAR(255) NOT NULL,
     event_id VARCHAR(255) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE events (
     organizer_user_id BIGINT NOT NULL,
     created_time TIMESTAMP NOT NULL,
     updated_time TIMESTAMP NOT NULL,
-    timezone TIMESTAMP NOT NULL,
+    timezone VARCHAR(255) NOT NULL,
     platform_url VARCHAR(255) NOT NULL,
     meeting_url VARCHAR(255) NOT NULL
 );
